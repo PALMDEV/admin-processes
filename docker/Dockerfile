@@ -5,7 +5,6 @@ RUN apt update && apt install -y curl && curl -sL https://deb.nodesource.com/set
 RUN apt install -y nodejs && apt install -y npm
 RUN npm install -g @angular/cli
 RUN npm install -g n
-RUN npm install
 RUN n 8
 
 # Install Nginx.
@@ -17,17 +16,14 @@ RUN n 8
 #   echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
 #   chown -R www-data:www-data /var/lib/nginx
 
-
 ENV API_URL http://localhost:5000
 ENV API_KEY THISISAENVARIABLE
 
 EXPOSE 8008 
 EXPOSE 4200
 
-CMD ["ng serve", "-D", "FOREGROUND"]
-
 # FROM dev as build
 
 
 
-# FROM build as prod
+# FROM dev as prod
