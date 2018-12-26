@@ -1,0 +1,6 @@
+web:
+  image: luisdavis/drprojectqa:lastest
+  container_name: qa_angular_front
+  ports:
+   - "80:80"
+   - "443:443"

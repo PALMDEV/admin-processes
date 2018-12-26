@@ -1,0 +1,6 @@
+web:
+  image: luisdavis/drprojectprod:lastest
+  container_name: prod_angular_front
+  ports:
+   - "80:80"
+   - "443:443"
